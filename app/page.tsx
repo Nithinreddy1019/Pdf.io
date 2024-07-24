@@ -23,7 +23,7 @@ export default function Home() {
                 </p>
 
                 <Link
-                    href={"/dashboard"}
+                    href={"/sign-in"}
                     className={buttonVariants({
                         className: "mt-5",
                     })}
@@ -52,7 +52,7 @@ export default function Home() {
                 <div className="mx-auto mt-16 max-w-7xl px-6 lg:px-8 sm:mt-20 md:mt-24">
                     <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
                         {features.map((feature) => (
-                            <div className="md:pl-9 relative">
+                            <div className="md:pl-9 relative" key={feature.name}>
                                 <dt className="inline text-gray-900 font-semibold">
                                     <feature.icon 
                                         aria-hidden={true}

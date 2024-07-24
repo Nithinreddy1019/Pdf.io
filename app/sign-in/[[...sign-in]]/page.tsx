@@ -128,8 +128,8 @@ export default function SignInPage() {
                 <SignIn.Strategy name="password">
                   <Card className="w-full sm:w-96">
                     <CardHeader>
-                      <CardTitle>Check your email</CardTitle>
-                      <CardDescription>Enter the verification code sent to your email</CardDescription>
+                      <CardTitle>Password</CardTitle>
+                      <CardDescription>Please enter your pasword</CardDescription>
                       <p className="text-sm text-muted-foreground">
                         Welcome back <SignIn.SafeIdentifier />
                       </p>

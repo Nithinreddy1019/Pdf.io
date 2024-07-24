@@ -36,7 +36,7 @@ export const FileUpload = () => {
                     (
                         <>
                             <CircleArrowDown className='h-12 w-12 mr-2 animate-bounce'/>
-                            <p>Drag 'n' drop some files here, or click to select files</p>
+                            <p>Drag and drop some files here, or click to select files</p>
                         </>
                     )
                     
