@@ -6,9 +6,11 @@ const DashboardLayout = ({
 }: {children: React.ReactNode}) => {
     return (
         <ClerkLoaded>
-            <main className="h-screen">
+            <main className="h-screen flex flex-col">
                 <Header />
-                {children}
+                <div className="flex-1 overflow-y-auto">
+                    {children}
+                </div>
             </main>
         </ClerkLoaded>
     );
