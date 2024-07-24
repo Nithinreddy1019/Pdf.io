@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const Header = () => {
     return (
-        <div className="flex justify-between p-2">
+        <div className="flex justify-between p-2 px-4 shadow-sm bg-opacity-55 bg-white">
             <Link href={"/dashboard"} className="text-primary font-bold text-xl">
                 Pdf.io
             </Link>
