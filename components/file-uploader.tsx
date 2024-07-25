@@ -1,5 +1,6 @@
 "use client"
 
+import { useUpload } from '@/hooks/useUpload'
 import { cn } from '@/lib/utils'
 import { CircleArrowDown, Rocket } from 'lucide-react'
 import {useCallback} from 'react'
@@ -8,12 +9,25 @@ import {useDropzone} from 'react-dropzone'
 
 export const FileUpload = () => {
 
+    const { progress, status, fileid, handleupload } = useUpload();
 
-    const onDrop = useCallback((acceptedFiles: File[]) => {
+    const onDrop = useCallback(async (acceptedFiles: File[]) => {
         // Do something with the files
+        const file = acceptedFiles[0];
+        if (file) {
+            //upload
+            await handleupload(file);
+        } else {
+            //do something
+        }
     }, [])
 
-    const {getRootProps, getInputProps, isDragActive, isFocused} = useDropzone({onDrop})
+    const {getRootProps, getInputProps, isDragActive, isFocused} = useDropzone({
+        onDrop,
+        accept: {
+            "application/pdf": [".pdf"],
+        },
+    })
 
 
 
@@ -21,7 +35,7 @@ export const FileUpload = () => {
         <div className='max-w-7xl mx-auto flex flex-col gap-4 items-center mt-12'>
             <div 
                 {...getRootProps()}
-                className={cn("p-4 border-primary border-2 rounded-lg border-dashed text-primary flex items-center justify-center h-64 w-72 bg-primary/10", (isDragActive || isFocused && "bg-primary"))}
+                className={cn("p-4 border-primary border-2 rounded-lg border-dashed text-primary flex items-center justify-center h-64 w-72 bg-primary/10", (isDragActive || isFocused && "bg-primary/50"))}
             >
                 <input {...getInputProps()} />
                 {
