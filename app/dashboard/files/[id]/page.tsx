@@ -1,3 +1,4 @@
+import { Chat } from "@/components/chat";
 import { PdfView } from "@/components/pdf-view";
 import { adminDb } from "@/firebaseAdmin";
 import { auth } from "@clerk/nextjs/server";
@@ -27,7 +28,7 @@ const ChatWithFilePage = async ({
     return (
         <div className="grid lg:grid-cols-5 h-full overflow-hidden">
             <div className="col-span-5 lg:col-span-2 overflow-y-auto">
-
+                <Chat id={id}/>
             </div>
 
             <div className="col-span-5 lg:col-span-3 border-r-2 lg:border-primary lg:-order-1 overflow-auto">
